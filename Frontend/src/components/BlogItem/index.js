@@ -12,8 +12,6 @@ export default function BlogItem({
     blogPost,
     imageOrientation,
 }) {
-
-    const user = JSON.parse(localStorage.getItem("user"));
     
     const nav = useNavigate();
 
@@ -29,10 +27,6 @@ export default function BlogItem({
             <div className="card-text-bottom">
               <BlogItemText blogPost={blogPost} />
             </div>
-            {/* <div className="" style={{ border: "blue 2px solid"}}>
-              {(user?.id === blogPost.author.id) && setEditBlog && setDeleteBlog ? <EditButtonsContainer /> : null}
-              {theStuff}
-            </div> */}
           </div>
             </>
         );
@@ -46,7 +40,6 @@ export default function BlogItem({
           >
             <img src={blogPost.image} className="card-img-left" alt="..." />
             <div className="card-text-right">
-              {/* {(user?.id === blogPost.author.id) && setEditBlog && setDeleteBlog ? <EditButtonsContainer /> : null} */}
               <BlogItemText blogPost={blogPost} />
             </div>
           </div>

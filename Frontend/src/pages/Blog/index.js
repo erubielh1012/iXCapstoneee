@@ -34,7 +34,7 @@ export default function BlogPage() {
         return () => {
           dispatch(reset());
         }
-      }, [blogId]);
+      }, [dispatch, blogId]);
     
       if (isLoading) {
         return <Loading />;
