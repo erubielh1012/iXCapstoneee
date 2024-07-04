@@ -1,11 +1,12 @@
-require("dotenv").config();
+const p = require('path');
+require("dotenv").config({ path: p.resolve(__dirname, '../.env') });
 
 const express = require("express");
 const cors = require("cors");
 
 const port = process.env.PORT || 8000;
 
-// console.log("MongoDB URI from environment:", process.env.MONGO_URI);
+console.log("MongoDB URI from environment:", process.env.MONGO_URI);
 
 // const connectDB = require("./database/db");
 // connectDB();
