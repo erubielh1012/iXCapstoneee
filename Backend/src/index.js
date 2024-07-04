@@ -1,11 +1,36 @@
+require("dotenv").config();
+
 const express = require("express");
 const cors = require("cors");
-require("dotenv").config()
 
 const port = process.env.PORT || 8000;
 
-const connectDB = require("./database/db");
-connectDB();
+// console.log("MongoDB URI from environment:", process.env.MONGO_URI);
+
+// const connectDB = require("./database/db");
+// connectDB();
+// connecting to MongoDB Atlas
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = process.env.MONGO_URI 
+
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }
+});
+
+async function run() {
+  try {
+    await client.connect();
+    await client.db("blog").command({ ping: 1 });
+    console.log("Pinged your deployment. Successfully connected to MongoDB!");
+  } finally {
+    await client.close();
+  }
+}
+run().catch(console.dir);
 
 const blogRoutes = require("./routes/blogRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
