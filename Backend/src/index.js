@@ -2,9 +2,10 @@ const p = require('path');
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config({ path: p.resolve(__dirname, '../.env') });
+const uri = process.env.MONGODB_URI;
 
-const blogRoutes = require("./routes/blogRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
+const blogRoutes = require("./routes/blogRoutes");
 const authRoutes = require("./routes/authRoutes");
 
 const path = require("path")
