@@ -13,6 +13,8 @@ export default function BlogItem({
     imageOrientation,
 }) {
     
+  console.log(index);
+  
     const nav = useNavigate();
 
     if (imageOrientation === "top") {

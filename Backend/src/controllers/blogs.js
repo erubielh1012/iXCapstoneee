@@ -2,9 +2,8 @@ const Blog = require("../models/Blog");
 
 const { uploadToFirebaseStorage } = require("../service/google-cloud");
 
-// this is all the routes code for blogs
 const createBlog = async (req, res) => {
-    console.log("made it through");
+    console.log("req.body");
     try {
         let imageURL = "";
         if (req?.file?.path) {
@@ -14,8 +13,11 @@ const createBlog = async (req, res) => {
             );
         }
 
-        console.log(req.body);
+        console.log(req)
+
+        console.log("chkpt 0");
         const categoryIds = JSON.parse(req?.body?.categories).map((x) => x.id);
+        console.log("chkpt 1");
         const blog = new Blog({
             title: req.body.title,
             description: req.body.description,
@@ -25,6 +27,7 @@ const createBlog = async (req, res) => {
             categories: categoryIds,
         });
 
+        console.log("chkpt 2");
 
         const newBlog = await blog.save();
 
@@ -179,14 +182,14 @@ const deleteBlogById = async (req, res) => {
 };
 
 module.exports = {
-getBlogs,
-// getBlog,
-getBlogsByCategoryId,
-getBlogsByAuthorId,
-getBlogById,
-createBlog,
-updateBlogById,
-deleteBlogById,
+    getBlogs,
+    // getBlog,
+    getBlogsByCategoryId,
+    getBlogsByAuthorId,
+    getBlogById,
+    createBlog,
+    updateBlogById,
+    deleteBlogById,
   };
   
 

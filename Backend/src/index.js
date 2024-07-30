@@ -14,24 +14,24 @@ const port = process.env.PORT || 8000;
 
 console.log("MongoDB URI from environment:", process.env.MONGO_URI);
 
-// connecting to MongoDB Atlas
-const { MongoClient } = require('mongodb');
-const uri = process.env.MONGO_URI 
+// // connecting to MongoDB Atlas
+// const { MongoClient } = require('mongodb');
+// const uri = process.env.MONGO_URI 
 
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-async function run() {
-  try {
-    await client.connect();
-    await client.db("onlineData").command({ ping: 1 });
-    console.log("Pinged your deployment. You're connected to", client)
-  } catch (err) {
-    console.log('Error connection to MongoDB', err);
-  } finally {
-    await client.close();
-  }
-}
-run().catch(console.dir);
+// async function run() {
+//   try {
+//     await client.connect();
+//     await client.db("onlineData").command({ ping: 1 });
+//     console.log("Pinged your deployment. You're connected")
+//   } catch (err) {
+//     console.log('Error connection to MongoDB', err);
+//   } finally {
+//     await client.close();
+//   }
+// }
+// run().catch(console.dir);
 
 const connectDB = require("./database/db");
 connectDB();
