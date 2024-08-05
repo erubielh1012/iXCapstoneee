@@ -59,7 +59,7 @@ export default function BlogsPage() {
       dispatch(resetBlog());
       dispatch(resetCategory());
     };
-  }, [categoryId]);
+  }, [dispatch, categoryId]);
 
   const onBlogAdd = () => {
     dispatch(

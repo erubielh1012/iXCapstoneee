@@ -39,7 +39,7 @@ export default function ProfilePage() {
       dispatch(fetchAuthor(authorId));
       dispatch(fetchBlogsByAuthorId(authorId));
       return () => {dispatch(reset())}
-    }, [authorId]);
+    }, [dispatch, authorId]);
 
     const onBlogAdd = () => {
       dispatch(

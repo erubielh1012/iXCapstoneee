@@ -36,7 +36,7 @@ export default function CategoriesPage() {
   useEffect(() => {
     dispatch(fetchCategories());
     return () => dispatch(resetSuccessAndError());
-  }, []);
+  }, [dispatch]);
 
   const onCategoryAdd = () => {
     dispatch(setAddCategory({

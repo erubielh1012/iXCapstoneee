@@ -38,7 +38,7 @@ export default function Home() {
       dispatch(resetBlogs());
       dispatch(resetCategories());
     };
-  }, []);
+  }, [dispatch]);
 
 
   return (
