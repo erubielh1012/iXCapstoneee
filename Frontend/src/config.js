@@ -1,3 +1,3 @@
-const baseURL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8000';
+const baseURL = "blog-app-1-093e0207d39e.herokuapp.com";
 
 export default baseURL;
