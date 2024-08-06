@@ -1,7 +1,8 @@
+import baseURL from '../config';
 
 const createBlog = async (blog) => {
   const response = await fetch(
-    "http://localhost:8000/api/blogs", 
+    `${baseURL}/api/blogs`, 
     {
       method: "POST",
       headers: {
@@ -29,7 +30,7 @@ const createBlog = async (blog) => {
 const fetchBlogs = async () => {
   console.log("Trying to grab all Blogs")
   const response = await fetch(
-    "http://localhost:8000/api/blogs",
+    `${baseURL}/api/blogs`,
     {
       method: "GET",
       headers: {
@@ -53,7 +54,7 @@ const fetchBlogs = async () => {
 
 const fetchBlogById = async (id) => {
   const data = await fetch(
-    "http://localhost:8000/api/blogs/" + id,
+    `${baseURL}/api/blogs/` + id,
     {
       method: "GET",
       headers: {
@@ -78,10 +79,10 @@ const fetchBlogById = async (id) => {
 const fetchBlogsByCategoryId = async ( categoryId ) => {
   console.log("Trying to grab filtered blogs by cats ID")
 
-  console.log("http://localhost:8000/api/blogs/category/" + categoryId);
+  console.log(`${baseURL}/api/blogs/category/` + categoryId);
 
   const data = await fetch(
-    "http://localhost:8000/api/blogs/category/" + categoryId,
+    `${baseURL}/api/blogs/category/` + categoryId,
     {
       method: "GET",
       headers: {
@@ -107,7 +108,7 @@ const fetchBlogsByAuthorId = async ( authorId ) => {
   console.log("Trying to grab filtered blogs by author's ID")
 
   const data = await fetch(
-    ("http://localhost:8000/api/blogs/author/" + authorId),
+    (`${baseURL}/api/blogs/author/` + authorId),
     {
       method: "GET",
       headers: {
@@ -131,7 +132,7 @@ const fetchBlogsByAuthorId = async ( authorId ) => {
 
 
 const updateBlog = async (blog) => {
-  const response = await fetch("http://localhost:8000/api/blogs/" + blog.get("id"), {
+  const response = await fetch(`${baseURL}/api/blogs/` + blog.get("id"), {
     method: "PUT",
     headers: {
       // "Content-Type": "application/json",
@@ -155,7 +156,7 @@ const updateBlog = async (blog) => {
 };
 
 const deleteBlogById = async (id) => {
-  const response = await fetch("http://localhost:8000/api/blogs/" + id, {
+  const response = await fetch(`${baseURL}/api/blogs/` + id, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",

@@ -1,6 +1,8 @@
+import baseURL from '../config';
+
 const register = async (userData) => {
   const response = await fetch(
-    "http://localhost:8000/api/auth/register",{
+    `${baseURL}/api/auth/register`,{
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,7 +26,7 @@ const register = async (userData) => {
 };
 
 const login = async (userData) => {
-  const response = await fetch("http://localhost:8000/api/auth/login", {
+  const response = await fetch(`${baseURL}/api/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -44,7 +46,7 @@ const login = async (userData) => {
 
 const getAuthorInfo = async (id) => {
     const data = await fetch(
-        "http://localhost:8000/api/auth/" + id,
+      `${baseURL}/api/auth/` + id,
         {
           method: "GET",
           headers: {
@@ -68,7 +70,7 @@ const getAuthorInfo = async (id) => {
 
 const updateUser = async (user) => {
   const response = await fetch(
-    `http://localhost:8000/api/auth/user/${user.get("id")}`,
+    `${baseURL}/api/auth/user/${user.get("id")}`,
     {
       method: "PUT",
       headers: {

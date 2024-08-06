@@ -1,7 +1,9 @@
+import baseURL from '../config';
+
 const createCategory = async (category) => {
   console.log("You are creating a new category!")
   const response = await fetch(
-    "http://localhost:8000/api/categories",
+    `${baseURL}/api/categories`,
     {
       method: "POST",
       headers: {
@@ -27,7 +29,7 @@ const createCategory = async (category) => {
 };
 
 const fetchCategories = async () => {
-  const response = await fetch("http://localhost:8000/api/categories", {
+  const response = await fetch(`${baseURL}/api/categories`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -51,7 +53,7 @@ const fetchCategories = async () => {
 
 const updateCategory = async (category) => {
   const data = await fetch(
-    "http://localhost:8000/api/categories/" + category.id,
+    `${baseURL}/api/categories` + category.id,
     {
       method: "PUT",
       headers: {
@@ -78,7 +80,7 @@ const updateCategory = async (category) => {
 
   const deleteCategory = async (id) => {
     const response = await fetch(
-      "http://localhost:8000/api/categories/" + id,
+      `${baseURL}/api/categories` + id,
       {
         method: "DELETE",
         headers: {
