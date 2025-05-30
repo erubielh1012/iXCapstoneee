@@ -5,6 +5,8 @@ import Categories from "../Categories";
 import "./index.css";
 
 export default function BlogItemText({ blogPost, headerFontSize }) {
+    const isHomePage = window.location.pathname === "/Home";
+
     return (
         <div>
             <div style={{ display: "flex" }}>
@@ -28,7 +30,9 @@ export default function BlogItemText({ blogPost, headerFontSize }) {
             <p style={{ fontSize: "16px", color: "#667085", textAlign: "left" }}>
                 {blogPost.description ? blogPost.description.substring(0, 100) : "N/A"}...
             </p>
-            <Categories categories={blogPost.categories} />
+            { !isHomePage && (<Categories categories={blogPost.categories} />) }
+            {/* i want to be able to show categories on a blog post only when it 
+            is not in the home page */}
         </div>
     );
 }

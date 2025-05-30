@@ -27,7 +27,7 @@ export default function BlogItem({
           >
             <img src={blogPost.image} className="card-img-top" alt="..." />
             <div className="card-text-bottom">
-              <BlogItemText blogPost={blogPost} />
+              <BlogItemText blogPost={blogPost} headerFontSize={"1.5rem"} />
             </div>
           </div>
             </>
@@ -42,7 +42,7 @@ export default function BlogItem({
           >
             <img src={blogPost.image} className="card-img-left" alt="..." />
             <div className="card-text-right">
-              <BlogItemText blogPost={blogPost} />
+              <BlogItemText blogPost={blogPost} headerFontSize={"1.25rem"} />
             </div>
           </div>
         );
