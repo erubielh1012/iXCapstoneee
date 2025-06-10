@@ -19,15 +19,15 @@ export default function Home() {
   const dispatch = useDispatch();
   const {
     blogs,
-    isError: isBlogsError,
-    isSuccess: isBlogsSuccess,
-    message: blogsMessage,
+    // isError: isBlogsError,
+    // isSuccess: isBlogsSuccess,
+    // message: blogsMessage,
   } = useSelector((state) => state.blogs);
   const {
     categories, 
-    isError: isCategoriesError, 
-    isSuccess: isCategoriesSuccess,
-    message: categoriesMessage,
+    // isError: isCategoriesError, 
+    // isSuccess: isCategoriesSuccess,
+    // message: categoriesMessage,
   } = useSelector((state) => state.categories);
 
   useEffect(() => {
@@ -39,7 +39,6 @@ export default function Home() {
       dispatch(resetCategories());
     };
   }, [dispatch]);
-
 
   return (
     <>
@@ -58,7 +57,7 @@ export default function Home() {
         </div>
       </div>
       <Footer />
-      <SuccessToast 
+      {/* <SuccessToast 
         show={isBlogsSuccess || isCategoriesSuccess}
         message={blogsMessage || categoriesMessage}
         onClose={ () => {
@@ -73,7 +72,7 @@ export default function Home() {
           dispatch(resetBlogSucAndErr());
           dispatch(resetCatSucAndErr());
         }}
-      />
+      /> */}
     </>
   );
 }

@@ -156,7 +156,7 @@ export default function ProfilePage() {
         />
         <AddEditBlogModal />
         <DeleteBlogModal />
-        <SuccessToast
+        {/* <SuccessToast
           show={isSuccess}
           message={message}
           onClose={() => {dispatch(resetSuccessAndError())} }
@@ -165,7 +165,7 @@ export default function ProfilePage() {
           show={isError}
           message={message}
           onClose={() => {dispatch(resetSuccessAndError())} }
-        />
+        /> */}
       </>
     );
   }

@@ -140,23 +140,34 @@ export default function AddEditBlogModal() {
                     className="form-select"
                     id="categoryInputSelect"
                     onChange={(e) => {
-                      const category = categories?.find(
+                      const selectedCategory = categories?.find(
                         (x) => x.id === e.target.value
                       );
-                      if (!category) {
+                      // If no category is selected, do nothing
+                      if (!selectedCategory) {
                         return;
                       }
-                      if (blog?.categories?.find((x) => x.id === category.id)) {
+                      // Check if the category is already added
+                      else if (blog?.categories?.find((x) => x.id === selectedCategory.id)) {
                         return;
                       }
-                      const blogUpdate = {
+                      // Limit to 3 categories
+                      else if (blog?.categories?.length >= 3) {
+                        alert("You can only add up to 3 categories.");
+                        e.target.value = "";
+                        return;
+                      }
+                      // Add the selected category to the blog
+                      setBlog({
                         ...blog,
-                        categories: [...blog.categories, category],
-                      };
-                      setBlog(blogUpdate);
+                        categories: [...blog.categories, selectedCategory],
+                      });
+
+                      e.target.value = ""; // Reset the select input
                     }}
                     required={editBlog ? false : true}
                   >
+                    <option value="">Choose a category</option>
                     {categories?.map((category, index) => {
                       return (
                         <option key={index} value={category.id}>

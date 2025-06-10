@@ -45,7 +45,7 @@ export default function BlogPage() {
           <Navbar />
           <ShowBlog blog={blog} />
           <Footer />
-          <SuccessToast
+          {/* <SuccessToast
             show={isSuccess}
             message={message}
             onClose={() => { dispatch(resetSuccessAndError())}}
@@ -54,7 +54,7 @@ export default function BlogPage() {
             show={isError}
             message={message}
             onClose={() => { dispatch(resetSuccessAndError())}}
-          />
+          /> */}
         </>
       );
     }
