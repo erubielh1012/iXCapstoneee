@@ -168,7 +168,7 @@ if (isLoadingBlogs || isLoadingCategories) {
       </div>
 
       <Footer />
-      <SuccessToast
+      {/* <SuccessToast
         show={isBlogSuccess || isCategoriesSuccess}
         message={blogsMessage || categoriesMessage}
         onClose={() => {
@@ -185,7 +185,7 @@ if (isLoadingBlogs || isLoadingCategories) {
           dispatch(resetBlog());
           dispatch(resetCategory());
         }}
-      />
+      /> */}
     </>
   );
 }

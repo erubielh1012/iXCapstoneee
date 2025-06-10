@@ -76,7 +76,7 @@ export default function CategoriesPage() {
       <Footer />
       <AddEditCategoryModal/>
       <DeleteCategoryModal/>
-      <SuccessToast
+      {/* <SuccessToast
         show={isSuccess}
         message={message}
         onClose={() => {
@@ -89,7 +89,7 @@ export default function CategoriesPage() {
         onClose={() => {
           dispatch(resetSuccessAndError());
         }}
-      />
+      /> */}
     </>
   );
 }

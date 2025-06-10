@@ -123,7 +123,7 @@ export default function RegisterPage() {
           </form>
         </main>
       </div>
-      <SuccessToast
+      {/* <SuccessToast
         show={isSuccess}
         message={message}
         onClose={() => {
@@ -136,7 +136,7 @@ export default function RegisterPage() {
         onClose={() => {
           dispatch(reset());
         }}
-      />
+      /> */}
     </>
   );
 }
